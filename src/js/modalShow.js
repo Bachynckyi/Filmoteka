@@ -33,9 +33,7 @@ function modalEventListener(e) {
 
 function openCart(e) {
   refs.backdrop.addEventListener('click', onBackdropCloseModal);
-
-  const liItem = e.path.filter(a => a.nodeName === 'LI')[0];
-
+  const liItem = e.composedPath().filter(a => a.nodeName === 'LI')[0];
   notiflixLoading();
   const serchId = liItem.dataset.id;
   onOpenModal(serchId);
